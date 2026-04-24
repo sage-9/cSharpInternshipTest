@@ -1,42 +1,28 @@
 public class MultiplicationTable {
 
     public static void main(String[] args) {
-        // Start the recursion: Row 1, Range 1 to 20
         printRows(1, 20);
     }
 
-    /**
-     * Recursive function to iterate through the rows (1 to 20)
-     */
     public static void printRows(int currentRow, int maxRow) {
-        // Base case: if we exceed the max row, stop.
         if (currentRow > maxRow) {
             return;
         }
 
-        // Print the columns for the current row (1 to 10)
         printColumns(currentRow, 1);
         
-        // Move to the next line after finishing a row
         System.out.println(); 
 
-        // Recursive call for the next row
         printRows(currentRow + 1, maxRow);
     }
 
-    /**
-     * Recursive function to iterate through columns (1 to 10) for a specific row
-     */
     public static void printColumns(int row, int col) {
-        // Base case: print 10 columns per row
         if (col > 10) {
             return;
         }
 
-        // Calculate and format the output for alignment
         System.out.printf("%4d", row * col);
 
-        // Recursive call for the next column
         printColumns(row, col + 1);
     }
 }
